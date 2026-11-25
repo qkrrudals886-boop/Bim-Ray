@@ -1,0 +1,16 @@
+data_group,data_side,sensor_columns_example,ifc_file,ifc_element_type,ifc_type_name,ifc_ref,ifc_ref_kind,space_name,notes
+AHU,AIR SIDE,"Fan 회전속도/동력/차압, SA/MA/OA/RA 온습도·CO2, 댐퍼 개도율, AHU 공급 온도",NBU_MedicalClinic_Eng-HVAC.ifc,IfcEnergyConversionDevice,M_Air Handling Unit - Split System - Horizontal,0rcx3NRlHCjxDJbhLB_yA3,global_id,,"대표 AHU 1기(모델엔 Tag 621849/630076 2기). 데이터가 단일 계통이라 1기 사용. IFC 실측으로 IfcUnitaryEquipment→IfcEnergyConversionDevice 교정, GlobalId 확정"
+VAV_1,USER SIDE,1# VAV 공급공기 차압/댐퍼 개도율/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,1nnMo_AKzCgPoNKZdxVAD0,global_id,,"200mm / Room_1 공급. Tag 720019. IFC 실측으로 IfcAirTerminal→IfcFlowController 교정"
+VAV_2,USER SIDE,2# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,0J3q8r36T0QQtYHes8eE2l,global_id,,150mm / Room_1 공급. Tag 710899
+VAV_3,USER SIDE,3# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,37ERv$vjXCjPUDTL4UUcHs,global_id,,150mm / Room_2 공급. Tag 630300
+VAV_4,USER SIDE,4# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,3E$HCkw6f2dvZkvEJvb0FE,global_id,,150mm / Room_2 공급. Tag 712077
+VAV_5,USER SIDE,5# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,2eGk8b7S9EYgiKcuDXjVEb,global_id,,150mm / Room_3 공급. Tag 593948
+VAV_6,USER SIDE,6# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,37ERv$vjXCjPUDTL4UUcU5,global_id,,150mm / Room_3 공급. Tag 630255
+VAV_7,USER SIDE,7# VAV 차압/댐퍼/풍량,NBU_MedicalClinic_Eng-HVAC.ifc,IfcFlowController,M_VAV Unit - Single Duct,2eGk8b7S9EYgiKcuDXjVFr,global_id,,150mm / Room_3 공급. Tag 593996
+Room_1,USER SIDE,Room 1 온도 설정값/온도/CO2,NBU_MedicalClinic_Arch.ifc,IfcSpace,PHARM. OFFICE,0ztdC3L1HAzhbhMHypqcYI,global_id,PHARM. OFFICE,3D 하이라이트 대상
+Room_2,USER SIDE,Room 2 온도 설정값/온도/CO2,NBU_MedicalClinic_Arch.ifc,IfcSpace,COUNSELING,0ztdC3L1HAzhbhMHypqcYF,global_id,COUNSELING,3D 하이라이트 대상
+Room_3,USER SIDE,Room 3 온도 설정값/온도/CO2,NBU_MedicalClinic_Arch.ifc,IfcSpace,SEC. OFFICE,0uLn6BSvvEB8kgChiujNHm,global_id,SEC. OFFICE,3D 하이라이트 대상
+Chiller,WATER SIDE,냉동기 전력사용량(kWh)/전력량(kW),NBU_MedicalClinic_Eng-HVAC.ifc,IfcEnergyConversionDevice,M_Screw Chiller - Air Cooled 633-703 kW,1Hk4$wKjPFLAM7$8qJgCUa,global_id,Chiller Pad,IFC2X3라 IfcChiller 클래스 없음 → 이름으로 매칭. 3D 하이라이트 가능
+Pump_ChilledWater,WATER SIDE,1#/2# 냉수 펌프 주파수/동력/전력,,LOGICAL,,plant.pump.chw,logical_node,,모델에 형상 없음 → 플랜트 계통도 노드로 표현
+Pump_CoolingWater,WATER SIDE,1#/2# 냉각수 펌프 주파수/동력/전력,,LOGICAL,,plant.pump.cw,logical_node,,모델에 형상 없음 → 플랜트 계통도 노드로 표현
+CoolingTower,WATER SIDE,냉각타워 팬 주파수/동력/전력,,LOGICAL,,plant.tower,logical_node,,모델에 형상 없음 → 플랜트 계통도 노드로 표현
