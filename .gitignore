@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+backend/.venv/
+
+# Node
+node_modules/
+dist/
+
+# 대용량·외부 데이터 (출처는 README에 명시)
+models/*.ifc
+frontend/public/models/*.ifc
+data/*.csv
+data/*.pdf
+backend/data/fine.csv
+backend/data/hourly.csv
+*.db
