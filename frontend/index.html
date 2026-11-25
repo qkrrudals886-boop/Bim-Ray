@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>HVAC 디지털 트윈 뷰어</title>
+  <style>
+    html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; background: #10161c; color: #e8edf2; }
+    #app { display: flex; height: 100vh; }
+    #viewer { flex: 1; position: relative; }
+    #viewer canvas { display: block; }
+    #sidebar { width: 340px; background: #161d26; border-left: 1px solid #263140; padding: 16px; overflow-y: auto; box-sizing: border-box; }
+    #sidebar h1 { font-size: 15px; margin: 0 0 4px; }
+    #sidebar .sub { font-size: 12px; color: #7d8ea3; margin-bottom: 16px; }
+    .field { margin-bottom: 12px; }
+    .field label { display: block; font-size: 11px; color: #7d8ea3; margin-bottom: 4px; }
+    input[type=file] { font-size: 11px; color: #e8edf2; width: 100%; }
+    #timeline { width: 100%; }
+    #timeLabel { font-size: 12px; color: #9fb3c8; margin-top: 4px; }
+    #groupList { list-style: none; margin: 0; padding: 0; }
+    #groupList li { padding: 8px 10px; margin-bottom: 4px; border-radius: 6px; cursor: pointer; font-size: 13px; background: #1d2733; display: flex; justify-content: space-between; align-items: center; }
+    #groupList li:hover { background: #24303f; }
+    #groupList li.active { outline: 1px solid #4da3ff; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    #detail { margin-top: 16px; border-top: 1px solid #263140; padding-top: 12px; font-size: 12px; }
+    #detail table { width: 100%; border-collapse: collapse; }
+    #detail td { padding: 3px 0; border-bottom: 1px solid #202a35; }
+    #detail td.name { color: #9fb3c8; }
+    #detail td.val { text-align: right; font-variant-numeric: tabular-nums; }
+    #status { position: absolute; top: 10px; left: 10px; font-size: 12px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; }
+    #legend { position: absolute; bottom: 10px; left: 10px; font-size: 11px; background: rgba(0,0,0,0.5); padding: 6px 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="viewer">
+      <div id="status">IFC 파일을 불러오는 중...</div>
+      <div id="legend"></div>
+    </div>
+    <div id="sidebar">
+      <h1>HVAC 디지털 트윈</h1>
+      <div class="sub">BIM(IFC) 3D 뷰어 + 실시간 센서 하이라이트</div>
+
+      <div class="field">
+        <label>건축 IFC (Arch)</label>
+        <input id="archFile" type="file" accept=".ifc" />
+      </div>
+      <div class="field">
+        <label>설비 IFC (Eng-HVAC)</label>
+        <input id="engFile" type="file" accept=".ifc" />
+      </div>
+      <div class="field">
+        <label>백엔드 API</label>
+        <input id="apiBase" type="text" value="http://127.0.0.1:8000" style="width:100%; font-size:12px; background:#0e141b; color:#e8edf2; border:1px solid #263140; border-radius:4px; padding:4px;" />
+      </div>
+
+      <div class="field">
+        <label id="timeLabel">시각</label>
+        <input id="timeline" type="range" min="0" max="1000" value="0" />
+      </div>
+
+      <ul id="groupList"></ul>
+      <div id="detail"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
